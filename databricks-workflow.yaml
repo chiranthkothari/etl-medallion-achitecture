@@ -1,0 +1,33 @@
+﻿resources:
+  jobs:
+    ETL:
+      name: ETL
+      tasks:
+        - task_key: initialize_database
+          notebook_task:
+            notebook_path: /Workspace/Shared/etl-project/init_database
+            source: WORKSPACE
+          existing_cluster_id: 0527-050341-jyh7gckz
+        - task_key: load_bronze
+          depends_on:
+            - task_key: initialize_database
+          notebook_task:
+            notebook_path: /Workspace/Shared/etl-project/load_bronze
+            source: WORKSPACE
+          existing_cluster_id: 0527-050341-jyh7gckz
+        - task_key: load_silver
+          depends_on:
+            - task_key: load_bronze
+          notebook_task:
+            notebook_path: /Workspace/Shared/etl-project/load_silver
+            source: WORKSPACE
+          existing_cluster_id: 0527-050341-jyh7gckz
+        - task_key: load_gold
+          depends_on:
+            - task_key: load_silver
+          notebook_task:
+            notebook_path: /Workspace/Shared/etl-project/load_gold
+            source: WORKSPACE
+          existing_cluster_id: 0527-050341-jyh7gckz
+      queue:
+        enabled: true
