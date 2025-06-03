@@ -4,9 +4,9 @@ This project implements a complete ETL pipeline using the Medallion architecture
 ## Data architecture
 The data architecture for this project follows Medallion Architecture Bronze, Silver, and Gold layers:
 
-<img width="881" alt="Screenshot 2025-05-28 at 10 39 17 PM" src="https://github.com/user-attachments/assets/a334b0da-d7ef-47e7-a5ae-23ca731c935f" />
+<img width="749" alt="image" src="https://github.com/user-attachments/assets/dc3f3075-41f4-4109-88b7-5f1cc3a2646e" />
 
-* **Bronze Layer**: Stores raw data as-is from the source systems. Data is loaded here from data folder of this rrepository using Azure data factory.
+* **Bronze Layer**: Stores raw data as-is from the source systems. Data is loaded here from data folder of this repository using Azure data factory.
 * **Silver Layer**: This layer includes data cleansing, standardization, and normalization processes to prepare data for analysis.
 * **Gold Layer**: Houses business-ready data modeled into a star schema required for reporting and analytics.
 
