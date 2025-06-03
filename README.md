@@ -6,7 +6,7 @@ The data architecture for this project follows Medallion Architecture Bronze, Si
 
 <img width="881" alt="Screenshot 2025-05-28 at 10 39 17 PM" src="https://github.com/user-attachments/assets/a334b0da-d7ef-47e7-a5ae-23ca731c935f" />
 
-* **Bronze Layer**: Stores raw data as-is from the source systems. Data is ingested from CSV Files into SQL Server Database.
+* **Bronze Layer**: Stores raw data as-is from the source systems. Data is loaded here from data folder of this rrepository using Azure data factory.
 * **Silver Layer**: This layer includes data cleansing, standardization, and normalization processes to prepare data for analysis.
 * **Gold Layer**: Houses business-ready data modeled into a star schema required for reporting and analytics.
 
